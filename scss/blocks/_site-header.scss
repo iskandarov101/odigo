@@ -1,0 +1,54 @@
+.wrapper {
+  background-image: url("../img/main-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  padding-top: 50px;
+}
+.header__wrapper {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: 1fr;
+  align-items: end;
+  justify-content: space-between;
+}
+.menu-burger {
+  display: none;
+}
+
+@include breakpoint-down (1000) {
+  .header {
+    padding-top: 30px;
+  }
+}
+@include breakpoint-down (700) {
+  .wrapper {
+    height: fit-content;
+  }
+  .header {
+    padding-top: 20px;
+  }
+  .header__wrapper {
+    align-items: center;
+  }
+  .menu-burger {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    background-image: url("../img/gamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 20;
+  }
+  .header--open .menu-burger {
+    background-image: url("../img/gamburger-close.svg");
+  }
+}

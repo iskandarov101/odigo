@@ -1,0 +1,158 @@
+.visit {
+  padding: 65px 0 130px;
+}
+
+.visit__title {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.visit__list {
+  display: grid;
+  grid-gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.visit__item {
+  position: relative;
+}
+.visit-card__box {
+  position: relative;
+}
+.visit__img {
+  display: block;
+  object-fit: cover;
+  margin-bottom: 45px;
+  width: 100%;
+  height: 100%;
+}
+.visit__wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.visit-card__name {
+  grid-column: 1 / 4;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+.visit-card__like-number {
+  grid-column: 4 / 5;
+  justify-self: end;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background-image: url("../img/visit-s.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 4px;
+  }
+}
+.visit-card__message-number {
+  grid-column: 5 / 6;
+  justify-self: end;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background-image: url("../img/massage-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 9px;
+  }
+}
+.visit-card__text {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.visit-card__link {
+  display: inline-block;
+  padding: 11px 19px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #006DFE;
+  border: 2px solid #006DFE;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  &:hover {
+    color: #006DFE;
+    background-color: #fff;
+  }
+}
+
+
+@include breakpoint-down (1200) {
+  .visit__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@include breakpoint-down (900) {
+  .visit__list {
+    column-gap: 30px;
+  }
+  .visit__img {
+    margin-bottom: 20px;
+  }
+  .visit-card__text {
+    margin-bottom: 20px;
+  }
+  .visit-card__text {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+@include breakpoint-down (700) {
+  .visit__list {
+    column-gap: 20px;
+  }
+  .visit-card__name, .visit-card__like-number, .visit-card__message-number {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .visit__title {
+    margin-bottom: 25px;
+  }
+}
+@include breakpoint-down (600) {
+  .visit {
+    padding: 35px 0 70px;
+  }
+  .visit__img {
+    margin-bottom: 15px;
+  }
+  .visit-card__text {
+    margin-bottom: 15px;
+  }
+  .visit__list {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+}
